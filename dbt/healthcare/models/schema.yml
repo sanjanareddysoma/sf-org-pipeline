@@ -1,0 +1,31 @@
+version: 2
+
+sources:
+  - name: raw
+    database: DBT_DB          # Your Snowflake database name
+    schema: raw               # Your Snowflake schema name
+    tables:
+      - name: raw_encounters  # The table you're referencing
+      - name: raw_transactions
+models:
+  - name: src_patients
+    description: Staging view for raw patients with standardized columns and unique patient ID
+    columns:
+      - name: unique_patient_id
+        description: Globally unique patient identifier constructed from hospital and patient ID
+        tests:
+          - not_null
+          - unique
+  - name: dim_departments
+    tests:
+      - unique:
+          column_name: department_key
+      - not_null:
+          column_name: department_key
+
+  - name: dim_cptcodes
+    tests:
+      - unique:
+          column_name: cpt_code
+      - not_null:
+          column_name: cpt_code

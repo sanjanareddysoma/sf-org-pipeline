@@ -1,0 +1,24 @@
+healthcare:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: ATAHHHY-YLC89681
+      user: SANJANAREDDY23US
+      password: Sanjanareddy@23
+      role: DBT_ROLE
+      database: DBT_DB
+      warehouse: DBT_WH
+      schema: SILVER
+      threads: 1
+
+    prod:
+      type: snowflake
+      account: ATAHHHY-YLC89681
+      user: SANJANAREDDY23US
+      password: Sanjanareddy@23
+      role: DBT_ROLE
+      database: DBT_DB
+      warehouse: DBT_WH
+      schema: GOLD
+      threads: 1
