@@ -5,7 +5,7 @@ healthcare:
       type: snowflake
       account: ATAHHHY-YLC89681
       user: SANJANAREDDY23US
-      password: Sanjanareddy@23
+      password: "{{ env_var('SF_PASSWORD') }}"
       role: DBT_ROLE
       database: DBT_DB
       warehouse: DBT_WH
@@ -16,9 +16,10 @@ healthcare:
       type: snowflake
       account: ATAHHHY-YLC89681
       user: SANJANAREDDY23US
-      password: Sanjanareddy@23
+      password: "{{ env_var('SF_PASSWORD') }}"
       role: DBT_ROLE
       database: DBT_DB
       warehouse: DBT_WH
       schema: GOLD
       threads: 1
+
