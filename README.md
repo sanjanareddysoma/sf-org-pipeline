@@ -55,14 +55,19 @@ Update your profiles.yml with Snowflake credentials
 
 ##Run dbt models:
 dbt deps
+
 dbt run
+
 dbt test
 
 ##Set Up Airflow (Optional)
 Use Astro CLI or a local Airflow setup
+
 DAGs are in the airflow/dags/ folder
+
 Ensure dbt CLI is installed and accessible from Airflow tasks
 
 ##Deploy with CI/CD
 GitHub Actions is configured to run dbt jobs on push/merge
+
 
