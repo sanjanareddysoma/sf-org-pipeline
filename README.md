@@ -49,25 +49,26 @@ cd sf-org-pipeline
 Create roles, warehouses, and schemas using files in /snowflake/ddl/
 Load raw data into ADLS and use external stages for loading into Snowflake
 
-##Configure dbt
+## Configure dbt
 Navigate to /dbt/healthcare/
 Update your profiles.yml with Snowflake credentials
 
-##Run dbt models:
+## Run dbt models:
 dbt deps
 
 dbt run
 
 dbt test
 
-##Set Up Airflow (Optional)
+## Set Up Airflow (Optional)
 Use Astro CLI or a local Airflow setup
 
 DAGs are in the airflow/dags/ folder
 
 Ensure dbt CLI is installed and accessible from Airflow tasks
 
-##Deploy with CI/CD
+## Deploy with CI/CD
 GitHub Actions is configured to run dbt jobs on push/merge
+
 
 
