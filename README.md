@@ -10,10 +10,15 @@ To build a scalable and modular data pipeline for healthcare Revenue Cycle Manag
 📂 About the Data
 
 The dataset simulates Electronic Medical Records (EMR) and claims data from two hospitals. Each hospital has its own:
+
 patients.csv
+
 providers.csv
+
 departments.csv
+
 transactions.csv
+
 encounters.csv
 
 Additionally, there's shared claims data and CPT code mappings. These are stored in Azure Data Lake, loaded into Snowflake, and transformed using dbt.
@@ -22,26 +27,39 @@ Data has been normalized, standardized, and integrated across hospitals using ho
 🧱 Architecture Overview
 
 Azure Data Lake → Snowflake (RAW → SILVER → GOLD) → dbt Transformations → Airflow Orchestration
+
 Medallion Architecture
+
 Multi-hospital integration
+
 CI/CD + Airflow Orchestration
 
 📈 Gold Layer KPIs
 
 ar_balance_summary.sql
+
 claims_status_metrics.sql
+
 provider_performance_summary.sql
+
 department_revenue_summary.sql
+
 denials_by_dept_provider.sql
+
 procedure_statistics.sql
+
 patient_utilization_summary.sql
+
 missing_providers_audit.sql
 
 🧪 Getting Started
 
 To replicate or build on this project:
+
 Clone the Repo
+
 git clone https://github.com/sanjanareddysoma/sf-org-pipeline.git
+
 cd sf-org-pipeline
 
 Set Up Snowflake
@@ -52,20 +70,27 @@ Load raw data into ADLS and use external stages for loading into Snowflake
 Configure dbt
 
 Navigate to /dbt/healthcare/
+
 Update your profiles.yml with Snowflake credentials
 
 Run dbt models:
 
 dbt deps
+
 dbt run
+
 dbt test
 
 Set Up Airflow (optional)
 
 Use Astro CLI or a local Airflow setup
+
 DAGs are in the airflow/dags/ folder
+
 Ensure dbt CLI is installed and accessible from Airflow tasks
 
 Deploy with CI/CD
+
 GitHub Actions is configured to run dbt jobs on push/merge
+
 
